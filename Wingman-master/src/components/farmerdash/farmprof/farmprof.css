@@ -1,0 +1,48 @@
+.profile-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .farmer-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .farmer-info-container, .chart-container {
+    flex: 1;
+  }
+  
+  .farmer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .farmer-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .farmer-details, .recent-activities {
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .chart-container {
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

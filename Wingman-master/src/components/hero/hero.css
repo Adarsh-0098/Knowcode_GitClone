@@ -1,0 +1,88 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(0, 128, 128, 0.7)), url('../../assets/back.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+    animation: slideIn 1.5s ease-in-out;
+}
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: greenyellow;
+}
+.hero-text p {
+    max-width: 600px;
+    margin: 10px auto 20px;
+    line-height: 1.4;
+}
+.getbtn {
+    background: #fff;
+    color: greenyellow;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.getbtn::before {
+    content: "";
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #bfffb0;
+    transition: left 0.4s ease;
+    z-index: 0;
+}
+.getbtn:hover::before {
+    left: 0;
+}
+.getbtn img {
+    width: 30px;
+    margin-left: 10px;
+}
+.getbtn:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    background-color: #bfffb0;
+    color: #000;
+}
+.getbtn span {
+    position: relative;
+    z-index: 1;
+}
+.getbtn img {
+    position: relative;
+    z-index: 1;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

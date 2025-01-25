@@ -1,0 +1,9 @@
+.rightside{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    justify-content: space-evenly;
+}
+.rightside h3{
+    margin-top: 20px;
+}

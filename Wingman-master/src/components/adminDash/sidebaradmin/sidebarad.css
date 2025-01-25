@@ -1,0 +1,92 @@
+.sidebar {
+  display: flex;
+  flex-direction: column; 
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.logoDiv {
+  margin-bottom: 15px; /* Reduced space below logo */
+  display: flex;
+  justify-content: center; /* Center the logo */
+}
+
+.logoDiv img {
+  width: 130px;  
+  margin-left: 20px;
+}
+
+.menuList {
+  list-style-type: none;
+  padding: 2px;
+  flex-grow: 1; /* Allows menu list to expand and occupy space */
+  margin-right: 10px;
+}
+
+.menuList .listItem {
+  margin: 20px; /* Reduced margin between items */
+}
+
+.menuLink {
+  text-decoration: none; /* Change this to 'none' for correct text decoration */
+  text-align: center;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Clickable area */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+.menuLink:hover {
+  background-color: #e0e0e0; /* Background change on hover */
+  color: #4af950; /* Text color on hover */
+}
+.menuLink span{
+  margin-left: 10px;
+  text-decoration: solid;
+}
+.sideBarCard {
+  background-color: transparent; /* Background for Help Center */
+  padding: 2px; /* Reduced padding around the card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for card effect */
+  display: flex;
+  flex-direction: row-reverse;
+  width: auto;
+  align-items: center; /* Center content inside */
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.sideBarCard .icon {
+  font-size: 20px; /* Slightly smaller icon size */
+  margin-bottom: 5px; /* Reduced space below icon */
+}
+
+.cardContent {
+  text-align: center; 
+  color: black;/* Center align text */
+}
+
+ .Logout {
+  padding: 8px 12px; /* Reduced padding for button */
+  background-color: transparent; /* Replace this with the hex code for your desired green */
+  color: rgb(10, 10, 10);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.sideBarCard:hover {
+  background-color: #73fc6f; /* Darker green on hover, you can adjust this too */
+}

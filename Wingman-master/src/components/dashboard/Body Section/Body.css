@@ -1,0 +1,50 @@
+.mainContent {
+    width: 82%; /* Ensure the content area takes the full width of its container */
+    padding: 2rem;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    overflow: auto;
+}
+
+.bottomflex {
+    display: flex;
+    justify-content: space-between; /* Ensure both sections have space between them */
+    gap: 2rem; /* Space between Listing and Activity */
+    margin-top: 2rem;
+}
+
+.Listing {
+    flex: 1;
+    background-color: #d6e9f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #a0c4db;
+    max-height: 400px; /* Control the height to prevent overflow */
+    overflow-y: auto; /* Allow scrolling if content exceeds the set height */
+    box-sizing: border-box;
+}
+
+.Activity {
+    flex: 1;
+    background-color: #f8d6e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dba0c4;
+    max-height: 400px; /* Control the height to match Listing section */
+    box-sizing: border-box;
+}
+
+/* Ensure both sections behave well in smaller screens */
+@media (max-width: 768px) {
+    .bottomflex {
+        flex-direction: column; /* Stack Listing and Activity vertically */
+    }
+    
+    .Listing, 
+    .Activity {
+        max-height: none; /* Allow full height on small screens */
+        width: 100%; /* Full width when stacked vertically */
+        margin-bottom: 1rem; /* Add space between stacked sections */
+    }
+}

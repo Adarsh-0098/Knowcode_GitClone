@@ -1,0 +1,278 @@
+/* Styling for the top section */
+.topSection {
+  width: 100%;
+  background-color: #f4f6fc; /* Light, soft background for contrast */
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd; /* Soft border to separate section */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+} 
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures elements wrap on smaller screens */
+}
+
+.title2 h1 {
+  font-size: 28px;
+  color: #2b2f42; /* Dark color for heading */
+  font-weight: 600;
+  margin: 0; /* Remove default margin */
+  padding-right: 20px; /* Add spacing from other elements */
+}
+
+.searchBar1 {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  width: 320px;
+  transition: box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.searchBar1 input {
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.searchBar1 .icon {
+  color: #888;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.searchBar1:hover {
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+.adminDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures alignment with other elements */
+}
+
+.adminDiv .icon {
+  font-size: 24px;
+  color: #555;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.adminImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+
+.adminImage:hover {
+  border-color: #2b2f42;  
+}
+
+ 
+.ImageButton {
+  width: 50px;  
+  height: 50px;  
+  border: none;  
+  background-color: transparent;  
+  cursor: pointer;
+  padding: 0; 
+  border-radius: 50%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.ImageButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%;  
+}
+
+/* Video Container Styles */
+.contentContainer {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: stretch;  
+  margin-top: 10px; 
+  width: 100%;
+}
+
+.videoContainer {
+  width: 65%;  
+  height: 200px;  
+  border-radius: 8px;
+  overflow: hidden;  
+  position: relative;
+}
+
+/* Right Container */
+
+/* Right Container */
+.rightContainer {
+  width: 35%;
+  margin-left: 20px;
+  background-color: #e9ffef; /* Light green background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statCard {
+  flex: 1;
+}
+
+.statCard h1 {
+  margin-bottom: 15px;
+  color: #76f55a;
+}
+
+.statDetails {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.statDetails span {
+  font-size: 16px;
+  color: #555555;
+}
+
+.statDetails small {
+  color: #72f64e; /* Darker color for small text */
+}
+
+.goToOrders {
+  color: #2b2f42;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.goToOrders .icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease; /* Smooth hover effect for the arrow */
+}
+
+.goToOrders:hover {
+  color: #55aa55; /* Change text color on hover */
+}
+
+.goToOrders:hover .icon {
+  transform: translateX(5px); /* Slide arrow to the right */
+}
+
+/* Image Section */
+.plantImage {
+  width: 100px; /* Adjust size */
+  height: 100px;
+  margin-left: 10px;
+}
+
+.plantImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: inherit;
+  border-radius: 10px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container */
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Align text vertically */
+  justify-content: center;
+  align-items: center;
+  color: white; /* Change to your preferred text color */
+  font-size: 24px; /* Adjust as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for better readability */
+  z-index: 1; /* Ensure text is on top of the video */
+}
+.btn1 {
+  background-color: #7ff661; /* Primary button color */
+  color: rgb(235, 233, 233); /* Text color */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin: 5px; /* Spacing between buttons */
+}
+
+.btn1:hover {
+  background-color: #1f2331; /* Darker shade on hover */
+}
+.btn1.transparent {
+  background-color: transparent; /* Make the background transparent */
+  color: #eff0f6; /* Set text color */
+  border: 2px solid #2b2f42; /* Add a border with the same color as text */
+  border-radius: 8px; /* Match rounded corners */
+  padding: 10px 20px; /* Keep padding consistent */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+  margin: 5px; /* Spacing between buttons */
+}
+
+/* Hover effect for the transparent button */
+.btn1.transparent:hover {
+  background-color: rgba(0, 41, 247, 0.1); /* Light background color on hover */
+  color: #2b2f42; /* Keep text color on hover */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title2 h1 {
+    font-size: 24px; /* Adjust heading size for smaller screens */
+  }
+
+  .searchBar1 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .adminDiv {
+    margin-top: 10px;
+  }
+}

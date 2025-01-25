@@ -1,0 +1,38 @@
+.adminGlass {
+    background: linear-gradient(
+        106.37deg,
+        #bbff8d 29.63%,
+        #b2ff60 51.56%, 
+        #75fd2c 90.85%
+    ); 
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.mainGlass {
+    display: grid;
+    height: 97%;
+    width: 97%;
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    grid-template-columns: 11rem auto 20rem;
+}
+
+.midGlass {
+ /* Adds some padding to the top */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align the content to the left */
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+.rightGlass{
+    margin-top: 15px;
+    margin-left: 10px;
+    text-align: center;
+}

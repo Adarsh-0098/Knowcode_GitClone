@@ -1,0 +1,21 @@
+/* src/components/dashboard/dashboard.css */
+
+.dashboard-container {
+    display: flex; /* Flexbox for side-by-side layout */
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .sidebar-container {
+    width: 150px; /* Width of the sidebar */
+    background-color: #f0f0f0; /* Sidebar background color */
+    padding: 20px; /* Padding inside the sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .body-container {
+    flex-grow: 1; /* Take up the remaining space */
+    background-color: #ffffff; /* Body background color */
+    padding: 20px; /* Padding inside the body */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  

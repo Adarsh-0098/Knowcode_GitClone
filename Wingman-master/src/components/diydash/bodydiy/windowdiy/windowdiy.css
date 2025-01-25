@@ -1,0 +1,21 @@
+/* Add this to your CSS for the back button style */
+.back-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .back-button:focus {
+    outline: none;
+  }
+  

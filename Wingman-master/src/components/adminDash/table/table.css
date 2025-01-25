@@ -1,0 +1,80 @@
+/* Table Container Styling */
+.MuiTableContainer-root {
+    margin: 10px 20px; /* Reduced margin on top */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 95%;
+    padding-right: 20px; /* Add padding to push the table away from the updates */
+    
+  }
+  
+  /* Title Styling */
+  .recentTransactionsTitle {
+    margin-bottom: 10px; /* Reduced margin bottom */
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Table Header Styling */
+  .MuiTableHead-root {
+    background-color: #dde6f1;
+    color: #8c8eff;
+  }
+  
+  .MuiTableCell-head {
+    color: rgb(7, 7, 7);
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 16px;
+  }
+  
+  /* Table Row Styling */
+  .MuiTableRow-root {
+    transition: background-color 0.2s ease;
+  }
+  
+  .MuiTableRow-root:hover {
+    background-color: #828ff1;
+  }
+  
+  /* Table Cell Styling */
+  .MuiTableCell-root {
+    font-size: 0.95rem;
+    color: #060606;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Status Badge Styling */
+  .status {
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 80px;
+    transition: transform 0.2s ease;
+  }
+  
+  .status:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Individual Status Colors */
+  .status[data-status="Approved"] {
+    background-color: rgba(145, 254, 159, 0.47);
+    color: green;
+  }
+  
+  .status[data-status="Pending"] {
+    background-color: #ffadad8f;
+    color: red;
+  }
+  
+  .status[data-status="Delivered"] {
+    background-color: #03fca9;
+    color: green;
+  }
+  

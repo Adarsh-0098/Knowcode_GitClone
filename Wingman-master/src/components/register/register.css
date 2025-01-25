@@ -1,0 +1,239 @@
+
+.registerPage1 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+/* Adjusted container */
+.container2 {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 500px;
+   /* Increased container height for dropdown */
+}
+
+/* Video section */
+.videodiv {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videodiv video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textDiv {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.textDiv h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.textDiv p {
+  font-size: 1rem;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Footer section (Sign Up button and text) */
+.footerDiv {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.footerDiv .text {
+  display: block;
+  margin-bottom: 10px; /* Space between text and button */
+}
+
+.footerDiv .btn {
+  background-color: #27ae60;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.footerDiv .btn:hover {
+  background-color: #2ecc71;
+}
+
+/* Form section */
+.formDiv {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerDiv {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.headerDiv img.large-logo {
+  width: 200px; /* Increased logo size */
+  height: 100px;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.inputDiv {
+  margin-bottom: 20px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+.input .icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Personalized button styling */
+.btn.personalized-btn {
+  background-color: #27ae60;
+  padding: 12px;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn.personalized-btn:hover {
+  background-color: #2ecc71;
+}
+
+/* Forgot password text */
+.forgotPassword {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Green color for 'Click Here' text */
+.forgotPassword a {
+  color: #27ae60;
+}
+@media (max-width: 1024px) {
+  .container2 {
+    width: 90%;
+    height: 650px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .container2 {
+    height: auto;
+  }
+
+  .formDiv {
+    padding: 40px 20px;
+  }
+
+  .headerDiv img.large-logo {
+    width: 120px;
+  }
+
+  .footerDiv {
+    bottom: 10px;
+  }
+
+  .footerDiv .btn {
+    padding: 8px 16px;
+  }
+
+  .textDiv h2 {
+    font-size: 2rem;
+  }
+
+  .textDiv p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container2 {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .formDiv {
+    padding: 30px 15px;
+  }
+
+  .headerDiv img.large-logo {
+    width: 100px;
+  }
+
+  .form {
+    max-width: 300px;
+  }
+
+  .footerDiv .btn {
+    padding: 6px 12px;
+  }
+
+  .textDiv h2 {
+    font-size: 1.8rem;
+  }
+
+  .textDiv p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerDiv img.large-logo {
+    width: 80px;
+  }
+
+  .footerDiv .btn {
+    font-size: 0.9rem;
+  }
+
+  .forgotPassword {
+    font-size: 0.8rem;
+  }
+
+  .btn.personalized-btn {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,163 @@
+.sidebar {
+  display: flex;
+  flex-direction: column; 
+  width: 250px;
+  min-height: 100vh; /* Occupy full vertical space */
+  background-color: #f7f7f7;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.logoDiv {
+  margin-bottom: 15px; /* Reduced space below logo */
+  display: flex;
+  justify-content: center; /* Center the logo */
+}
+
+.logoDiv img {
+  width: 150px;  
+  margin-right: 10px;
+}
+
+/* Menu list should take a full vertical column layout */
+.menuList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Ensures items are in a column layout */
+  gap: 5px; /* Space between menu items */
+  width: 100%; /* Ensure the list takes full width */
+}
+
+/* Each listItem should take full width */
+.menuList .listItem {
+  margin: 5px 0; /* Adds vertical spacing between items */
+  width: 100%; /* Each item should span the full width */
+}
+
+/* The links inside each menu item should take full width */
+.menuLink {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%; /* Ensure the link spans the full width */
+}
+
+
+.menuLink:hover {
+  background-color: #e0e0e0; /* Background change on hover */
+  color: #4CAF50; /* Text color on hover */
+}
+
+.settingList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Ensures items are in a column layout */
+  gap: 5px; /* Space between menu items */
+  width: 100%; ;  
+}
+
+.settingList .listItem {
+  margin: 10px 0; /* Reduced margin between items */
+}
+
+.settingLink {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Reduced padding for better visibility */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.settingLink:hover {
+  background-color: #e0e0e0; /* Background change on hover */
+  color: #4CAF50; /* Text color on hover */
+}
+
+.sideBarCard {
+  margin-top: auto; /* Push Help Center to the bottom */
+  background-color: #80ff8b; /* Background for Help Center */
+  padding: 5px; /* Reduced padding around the card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for card effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content inside */
+}
+
+.sideBarCard .icon {
+  font-size: 20px; /* Slightly smaller icon size */
+  margin-bottom: 5px; /* Reduced space below icon */
+} 
+.sidebar h3{
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px; /* Narrower sidebar for tablets */
+  }
+  
+  .logoDiv img {
+    width: 130px; /* Reduce logo size */
+  }
+  
+  .menuLink, .settingLink {
+    padding: 6px;
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Further reduce sidebar width on mobile */
+  }
+
+  .logoDiv img {
+    width: 120px;
+  }
+
+  .menuLink, .settingLink {
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .sideBarCard {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    position: absolute; /* Sidebar becomes overlay */
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    display: none; /* Initially hidden; can be shown with a toggle */
+  }
+  
+  .sidebar.active {
+    display: flex; /* Show sidebar when active */
+  }
+  
+  .menuLink, .settingLink {
+    padding: 4px;
+    font-size: 0.85rem; /* Compact text on small screens */
+  }
+  
+  .sideBarCard {
+    font-size: 0.8rem;
+  }
+}

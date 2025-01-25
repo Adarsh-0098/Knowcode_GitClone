@@ -1,0 +1,21 @@
+.mainDash {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (top-left) */
+    justify-content: flex-start; /* Make sure it stays at the top */
+    width: 100%; /* Ensures the heading takes full width */
+    padding-bottom: 30px;
+}
+
+.mainDash h1 {
+    color: black; 
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Optional: Add some padding if you want */
+    margin-top: 20px; /* Add some space from the top */
+}
+.mainDash h2 {
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Optional: Add some padding if you want */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

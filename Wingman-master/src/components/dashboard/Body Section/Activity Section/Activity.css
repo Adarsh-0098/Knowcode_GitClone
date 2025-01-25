@@ -1,0 +1,70 @@
+.activitySection {
+    padding: 10px; /* Increased padding for more space */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners for the entire section */
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    max-height: 400px; /* Set a maximum height for the section */
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.secContainer1 {
+    display: flex;
+    flex-direction: column; /* Vertical stacking of activities */
+}
+
+.singleCustomer {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    background-color: #ffffff; /* White background for each customer card */
+    padding: 15px; /* Increased padding for better spacing */
+    border-radius: 8px; /* Rounded corners for each activity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 10px; /* Spacing between activities */
+    width: 100%; /* Ensure it takes full width of the parent */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.singleCustomer:hover {
+    background-color: #adff90; /* Change background color on hover */
+}
+
+.singleCustomer img {
+    width: 50px; /* Fixed width for the profile image */
+    height: 50px; /* Fixed height for the profile image */
+    border-radius: 50%; /* Make the image fully rounded */
+    margin-right: 15px; /* Spacing between image and text */
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.singleCustomer img:hover {
+    transform: scale(1.1); /* Increase size on hover */
+}
+
+.customerDetails {
+    flex-grow: 1; /* Allow this section to take available space */
+}
+
+.name {
+    font-weight: bold; /* Make the name bold */
+    font-size: 1.2rem; /* Responsive font size */
+}
+
+.customerDetails small {
+    display: block; /* Stack amount sold below the name */
+    font-size: 1rem; /* Responsive font size */
+    color: #555; /* Slightly darker gray for amount */
+}
+
+.duration {
+    font-size: 0.9rem; /* Responsive font size */
+    color: #888; /* Lighter gray for duration */
+    margin-left: auto; /* Push the duration to the right */
+}

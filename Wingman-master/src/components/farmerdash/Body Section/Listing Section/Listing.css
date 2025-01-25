@@ -1,0 +1,265 @@
+.listingSection {
+    width: 60%;
+    height: 200px;
+    flex-basis: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f2f5;
+    border-radius: 5px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    color: #2b2f42;
+    font-weight: bold;
+}
+
+.heading .btn {
+    background-color: transparent;
+    color: #e94b24;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.heading .btn:hover {
+    background-color: #b0e8b4;
+    transform: scale(1.05);
+}
+
+.secContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sellers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .topSellers,
+  .featuredSellers {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+    .sellers .topSellers,
+    .sellers .featuredSellers {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+@media (max-width: 768px) {
+    .topSellers,
+    .otherSection {
+        width: 100%; /* Stack vertically on smaller screens */
+    }
+}
+
+.singleItem {
+    width: 150px;
+    height: 100px;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.singleItem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.card {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 248, 248);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Add space between cards */
+}
+
+.card img {
+    width: 80px; /* Reduced size for images */
+    height: 80px;
+    border-radius: 50%; /* Make the image rounded */
+    object-fit: cover; /* Ensure the image fits inside the rounded container */
+    margin-right: 10px; /* Add space between the image and the line */
+}
+
+/* Line between image and text */
+.users::after {
+    content: "";
+    display: block;
+    width: 1px; /* Vertical line width */
+    height: 50px; /* Line height (adjust as needed) */
+    background-color: #ccc; /* Light gray color for the line */
+    margin: 0 15px; /* Space between the image and text */
+}
+
+/* Text on the right side */
+.cardText {
+    font-size: 10px;
+    color: #2b2f42; /* Adjust color for visibility */
+    line-height: 1.5; /* Improve readability */
+    flex-grow: 1; /* Allow text to take up remaining space */
+}
+
+/* Optional: Add hover effect to the card */
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.cardText {
+    font-size: 16px; /* Slightly increase the font size for better readability */
+    color: #2b2f42; /* Keep text color dark for contrast */
+    line-height: 1.6; /* Improve line spacing for better text flow */
+    flex-grow: 1; /* Allow the text to take up the remaining space */
+    padding-left: 15px; /* Add a little padding to separate text from the vertical line */
+}
+
+/* Make the text within the card more visually distinct */
+.cardText span {
+    display: block; /* Display each line as a block for clean separation */
+    margin-bottom: 8px; /* Increase space between lines */
+    font-weight: 600; /* Make the text bolder for emphasis */
+    font-size: 15px; /* Slightly larger size for the main text */
+    color: #2d4059; /* Change the color to a slightly darker shade for clarity */
+}
+
+.cardText small {
+    font-size: 13px; /* Increase the size for smaller text to improve legibility */
+    display: inline-block;
+    color: #7a7a7a; /* Keep the gray color for less emphasized text */
+    margin-top: 5px; /* Add space between the main text and additional info */
+    display: block; /* Ensure this is separated from other content */
+}
+
+.users {
+    display: flex;
+    position: relative;
+}
+
+.users img {
+    width: 50px; /* Adjust width of each user image */
+    height: 50px; /* Adjust height as needed */
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover; /* Ensure images fit within the circle */
+    border: 2px solid white; /* Add a border to make the overlap clear */
+    margin-left: -15px; /* Negative margin to create overlap */
+    z-index: 1; /* Keep the stacking order in check */
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.users img:first-child {
+    margin-left: 0; /* Remove the negative margin from the first image */
+    z-index: 3; /* Make sure the first image is on top */
+}
+
+.users img:hover {
+    transform: scale(1.1); /* Enlarge the image slightly on hover */
+    z-index: 4; /* Bring the hovered image to the front */
+}
+
+
+.singleItem h3 {
+    font-size: 18px;
+    color: #fff; /* Make text white for contrast */
+    margin: 0;
+    position: absolute; /* Position text over the image */
+    bottom: 10px; /* Position near the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center text horizontally */
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: auto; /* Adjust width to fit text */
+}
+
+.singleItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.singleItem .icon {
+    font-size: 24px;
+    color: #fc5050;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.singleItem .icon.active {
+    color: #ff7675;
+}
+
+.singleItem .icon:hover {
+    color: #ff7675;
+    transform: scale(1.2);
+}
+
+.singleItem:nth-child(4) img {
+    width: 80%;
+}
+
+@media (max-width: 1024px) {
+    .singleItem {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .topSellers{
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .topSellers{
+        width: 100%;
+    }
+}  
+@media (max-width: 1024px) {
+    .topSellers {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .topSellers {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .topSellers{
+        width: 100%;
+    }
+}  

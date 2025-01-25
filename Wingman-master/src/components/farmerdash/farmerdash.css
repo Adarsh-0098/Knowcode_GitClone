@@ -1,0 +1,53 @@
+/* src/components/dashboard/dashboard.css */
+
+.dashboard-container {
+    display: flex; /* Flexbox for side-by-side layout */
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .sidebar-container {
+    width: 250px; /* Width of the sidebar */
+    background-color: #f0f0f0; /* Sidebar background color */
+    padding: 20px; /* Padding inside the sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .body-container {
+    flex-grow: 1; /* Take up the remaining space */
+    background-color: #ffffff; /* Body background color */
+    padding: 20px; /* Padding inside the body */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  @media (max-width: 1024px) {
+    .sidebar-container {
+      width: 200px; /* Narrower sidebar on smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column; /* Stack sidebar and body vertically */
+    }
+  
+    .sidebar-container {
+      width: 100%; /* Full width sidebar */
+      height: auto;
+      position: relative;
+      box-shadow: none;
+    }
+  
+    .body-container {
+      padding: 15px; /* Reduce padding in body container */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .sidebar-container {
+      width: 100%; /* Full width on very small screens */
+      padding: 15px;
+    }
+  
+    .body-container {
+      padding: 10px; /* Smaller padding for compact layout */
+    }
+  }

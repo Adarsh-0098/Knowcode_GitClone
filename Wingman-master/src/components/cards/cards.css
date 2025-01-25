@@ -1,0 +1,96 @@
+.CompactCard {
+    display: flex;
+    flex: 1;
+    height: 9rem !important;
+    border-radius: 0.7rem;
+    color: rgb(9, 9, 9); 
+    position: relative; 
+    cursor: pointer; 
+    width: 15rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Default box shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.CompactCard:hover {
+    box-shadow: 0px 8px 20px rgba(202, 220, 2, 0.3) !important; /* Enhanced shadow on hover */
+}
+
+.radialBar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 10px; /* Add padding around the circular progress bar */
+}
+
+.CircularProgressbar {
+    width: 4rem !important;
+    overflow: visible;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: white !important; 
+    stroke-width: 12px !important; 
+    filter: drop-shadow(2px 2px 6px white); /* Fix the syntax */
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+    display: none;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    fill: black !important;
+}
+
+.radialBar span {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px; /* Add padding around the text and icon */
+}
+.detail span:nth-child(2){
+    font-size: 22px;
+    font-weight: bold;
+
+}
+.detail span:nth-child(3){
+    font-size: 15px;
+    font-weight: bold;
+}
+.ExpandedCard{
+    position: absolute;
+    width: 60%;
+    height: 80vh;
+    z-index: 7;
+    left: 13rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: space-between;
+    padding: 1rem;
+    margin-left: 10px;
+}
+.ExpandedCard >span:nth-of-type(1){
+    color: rgb(95, 118, 245);
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px rgb(142, 86, 255);
+    padding-bottom: 5px;
+}
+.ExpandedCard >span:nth-of-type(2){
+    color: aqua;
+    text-shadow: 0px 1px 15px aqua;
+    font-size: 13px;
+}
+.chartContainer{
+    width: 60%;
+}

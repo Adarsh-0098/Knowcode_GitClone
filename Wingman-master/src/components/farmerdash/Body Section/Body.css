@@ -1,0 +1,104 @@
+.mainContent {
+    width: 100%;  
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+  }
+  
+  .bottomflex {
+    display: flex;
+    justify-content: space-between;  
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  /* Styling for the Listing Section */
+  .Listing {
+    flex: 1;
+    background-color: #d6e9f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #a0c4db;
+  }
+  
+  /* Styling for the Activity Section */
+  .Activity {
+    flex: 1;
+    background-color: #f8d6e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dba0c4;
+    height: 400px;  
+    overflow-y: auto; 
+  }
+  @media (max-width: 1024px) {
+    .activitySection {
+        max-width: 100%;
+        max-height: 350px;
+    }
+    
+    .singleCustomer {
+        padding: 12px;
+    }
+    
+    .name {
+        font-size: 1.1rem;
+    }
+    
+    .customerDetails small {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .activitySection {
+        max-width: 95%;
+        max-height: 320px;
+    }
+
+    .singleCustomer {
+        padding: 10px;
+        flex-direction: column;  
+        align-items: flex-start;
+    }
+
+    .singleCustomer img {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;  
+    }
+    
+    .name {
+        font-size: 1rem;
+    }
+    
+    .customerDetails small {
+        font-size: 0.9rem;
+    }
+
+    .duration {
+        font-size: 0.85rem;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .activitySection {
+        padding: 8px;
+        max-height: 300px;
+    }
+
+    .singleCustomer {
+        padding: 8px;
+    }
+
+    .name, .customerDetails small {
+        font-size: 0.9rem;
+    }
+    
+    .duration {
+        font-size: 0.8rem;
+    }
+}

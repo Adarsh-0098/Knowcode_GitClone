@@ -17,7 +17,7 @@ const Service = () => {
 
   return (
     <div className="services">
-      <div className="service" onClick={() => navigate("/VirtualTryOnPage")}>
+      <div className="service" onClick={() => navigate("/AIDesignSuggestions")}>
         <img src={ce} alt="AI Suggestions" />
         <div className="caption">
           <img src={ce_icon} alt="AI Suggestions Icon" />

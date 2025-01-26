@@ -33,6 +33,7 @@ import Chatbot from './components/Chatbot/Chatbot';
 import CommunityForum from './components/CommunityForum/CommunityForum';
 import ChairPage from './components/Chairpage';
 import Marketplace from './components/farmerdash/marketplace/marketplace';
+import AIDesignSuggestions from './components/AIDesignSuggestions';
  
  
 
@@ -151,6 +152,10 @@ const router = createBrowserRouter([
 {
   path: '/marketplace',
   element: <Marketplace/>
+},
+{
+  path: '/AIDesignSuggestions',
+  element: <AIDesignSuggestions/>
 }
 ]);
 

@@ -31,6 +31,9 @@ import Windowdiy from './components/diydash/bodydiy/windowdiy/windowdiy';
 import InspirationGallery from './components/farmerdash/InspirationGallery/InspirationGallery';
 import Chatbot from './components/Chatbot/Chatbot';
 import CommunityForum from './components/CommunityForum/CommunityForum';
+import ChairPage from './components/Chairpage';
+import Marketplace from './components/farmerdash/marketplace/marketplace';
+ 
  
 
 // Layout Component to handle common sections (Navbar, Footer)
@@ -140,6 +143,14 @@ const router = createBrowserRouter([
   {
     path: '/CommunityForum',
   element: <CommunityForum/>
+},
+{
+  path: '/Chairpage',
+  element: <ChairPage/>
+},
+{
+  path: '/marketplace',
+  element: <Marketplace/>
 }
 ]);
 

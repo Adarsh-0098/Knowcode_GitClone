@@ -14,25 +14,21 @@ const CommunityForum = () => {
   const chatBoxRef = useRef();
 
   useEffect(() => {
-    // Scroll chat box to bottom when a new message is added
     if (chatBoxRef.current) {
       chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
     }
   }, [chat]);
 
-  // Listen for messages from the server
   useEffect(() => {
     socket.on('receiveMessage', (messageData) => {
-      console.log('Message received:', messageData); // Debugging line
       setChat((prevChat) => [...prevChat, messageData]);
     });
 
     return () => {
-      socket.off('receiveMessage'); // Cleanup listener on component unmount
+      socket.off('receiveMessage');
     };
   }, []);
 
-  // Handle sending a message
   const sendMessage = () => {
     if (message.trim() || selectedImage) {
       const messageData = {
@@ -42,15 +38,12 @@ const CommunityForum = () => {
         timestamp: new Date().toLocaleTimeString(),
       };
 
-      socket.emit('sendMessage', messageData); // Send the message to the server
-      console.log('Sent message:', messageData); // Debugging line
-
-      setMessage(''); // Clear input
-      setSelectedImage(null); // Clear image after sending
+      socket.emit('sendMessage', messageData);
+      setMessage('');
+      setSelectedImage(null);
     }
   };
 
-  // Handle image upload
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file && file.type.startsWith('image')) {
@@ -71,18 +64,27 @@ const CommunityForum = () => {
           animate={{ opacity: 1, transform: 'translateY(0)' }}
           transition={{ duration: 0.5 }}
         >
-          <h2>Enter Your Name</h2>
+          <h2>Welcome to the Community Forum</h2>
+          <p className="intro-text">Let’s get started by knowing your name!</p>
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Enter your name"
             onChange={(e) => setUserName(e.target.value)}
             value={userName}
+            className="name-input"
           />
-          <button onClick={() => setIsNameEntered(true)}>Enter</button>
+          <motion.button
+            onClick={() => setIsNameEntered(true)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="enter-button"
+          >
+            Join Chat
+          </motion.button>
         </motion.div>
       ) : (
         <>
-          <h2>Community Forum</h2>
+          <h2 className="forum-header">🌟 Community Forum 🌟</h2>
           <div className="chat-box" ref={chatBoxRef}>
             {chat.map((msg, index) => (
               <motion.div
@@ -94,7 +96,13 @@ const CommunityForum = () => {
               >
                 <span className="chat-sender">{msg.sender}:</span>
                 <span className="chat-text">{msg.text}</span>
-                {msg.image && <img src={msg.image} alt="uploaded" className="chat-image" />}
+                {msg.image && (
+                  <img
+                    src={msg.image}
+                    alt="uploaded"
+                    className="chat-image"
+                  />
+                )}
                 <span className="chat-time">{msg.timestamp}</span>
               </motion.div>
             ))}
@@ -106,16 +114,26 @@ const CommunityForum = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message..."
+              className="message-input"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
-            <input type="file" onChange={handleImageUpload} accept="image/*" className="image-upload" />
+            <label htmlFor="image-upload" className="image-upload-label">
+              📷
+            </label>
+            <input
+              id="image-upload"
+              type="file"
+              onChange={handleImageUpload}
+              accept="image/*"
+              className="image-upload"
+            />
             <motion.button
               onClick={sendMessage}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              className="send-button"
             >
               Send
             </motion.button>

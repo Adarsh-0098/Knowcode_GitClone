@@ -6,77 +6,100 @@ const Diyvideo = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideoId, setSelectedVideoId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("DIY chair");
-  const [steps, setSteps] = useState([]);
+  const [cameraActive, setCameraActive] = useState(false);
+  const [cameraStream, setCameraStream] = useState(null);
 
-  const API_KEY = "AIzaSyA01dO9dyMpzwabhGIlTPYxiwNWXepC9as"; // Replace with your YouTube API key
+  const API_KEY = "AIzaSyCvq74E51TfH_1Mv-CvqMCKMuIzfNFa2cA"; // Replace with your YouTube API key
+
+  const fetchVideos = async (query) => {
+    try {
+      const response = await axios.get(
+        `https://www.googleapis.com/youtube/v3/search`,
+        {
+          params: {
+            part: "snippet",
+            q: query,
+            type: "video",
+            maxResults: 10,
+            key: API_KEY,
+          },
+        }
+      );
+      const fetchedVideos = response.data.items;
+      setVideos(fetchedVideos);
+
+      if (fetchedVideos.length > 0) {
+        setSelectedVideoId(fetchedVideos[0].id.videoId);
+      }
+    } catch (error) {
+      console.error("Error fetching videos:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search`,
-          {
-            params: {
-              part: "snippet",
-              q: searchQuery,
-              type: "video",
-              maxResults: 10,
-              key: API_KEY,
-            },
-          }
-        );
-        const fetchedVideos = response.data.items;
-        setVideos(fetchedVideos);
+    fetchVideos(searchQuery);
+  }, []);
 
-        // Automatically play the first video
-        if (fetchedVideos.length > 0) {
-          setSelectedVideoId(fetchedVideos[0].id.videoId);
-          setSteps([
-            `Step 1: Watch the video to understand how to create a DIY chair.`,
-            `Step 2: Gather all the required materials.`,
-            `Step 3: Follow the steps demonstrated in the video.`,
-            `Step 4: Complete your chair and personalize it!`,
-          ]);
-        }
-      } catch (error) {
-        console.error("Error fetching videos:", error);
-      }
-    };
-
-    fetchVideos();
-  }, [searchQuery]);
+  const handleSearch = () => {
+    if (searchQuery.trim() !== "") {
+      fetchVideos(searchQuery);
+    }
+  };
 
   const handleVideoClick = (videoId) => {
     setSelectedVideoId(videoId);
-    setSteps([
-      `Step 1: Watch the video to understand how to create a DIY chair.`,
-      `Step 2: Gather all the required materials.`,
-      `Step 3: Follow the steps demonstrated in the video.`,
-      `Step 4: Complete your chair and personalize it!`,
-    ]);
+  };
+
+  const handleLensClick = async () => {
+    try {
+      setCameraActive(true);
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      setCameraStream(stream);
+      const videoElement = document.getElementById("camera-feed");
+      videoElement.srcObject = stream;
+      videoElement.play();
+    } catch (error) {
+      console.error("Error accessing camera:", error);
+    }
+  };
+
+  const handleImageSearch = () => {
+    setSearchQuery("DIY woodwork");
+    fetchVideos("DIY woodwork");
+
+    if (cameraStream) {
+      cameraStream.getTracks().forEach((track) => track.stop());
+      setCameraActive(false);
+    }
   };
 
   return (
     <div className="video-container">
-      {/* Header */}
       <header className="header">
-        <h1>Welcome to DIYHub!</h1>
+        <h1>Discover DIY Ideas</h1>
       </header>
 
-      {/* Search Bar */}
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search for DIY videos..."
+          placeholder="Search DIY videos..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button className="search-button">🔍</button>
+        <button className="search-button" onClick={handleSearch}>🔍</button>
+        <button className="lens-button" onClick={handleLensClick}>📷</button>
       </div>
 
-      {/* Video Content Section */}
+      {cameraActive && (
+        <div className="camera-feed-container">
+          <video id="camera-feed" width="400" height="300" />
+          <button className="image-search-button" onClick={handleImageSearch}>
+            Search with Image
+          </button>
+        </div>
+      )}
+
       <div className="video-content">
-        {/* Main Video Player */}
         <div className="main-video-player">
           {selectedVideoId ? (
             <iframe
@@ -91,17 +114,8 @@ const Diyvideo = () => {
           ) : (
             <p>Loading video...</p>
           )}
-          <div className="steps">
-            <h3>Steps:</h3>
-            <ul>
-              {steps.map((step, index) => (
-                <li key={index}>{step}</li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Suggested Videos Section */}
         <div className="suggested-videos">
           <h2>Suggested Videos</h2>
           {videos.map((video) => (

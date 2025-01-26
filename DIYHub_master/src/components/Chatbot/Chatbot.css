@@ -35,8 +35,8 @@
   }
   
   .chat-header {
-    background-color: tomato;
-    color: white;
+    background-color: rgb(84, 255, 81);
+    color: rgb(0, 0, 0);
     padding: 10px;
     text-align: center;
     border-top-left-radius: 10px;
@@ -53,7 +53,7 @@
   .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
     cursor: pointer;
   }
@@ -76,7 +76,7 @@
   }
   
   .message.user {
-    background-color: tomato;
+    background-color: rgb(155, 252, 120);
     color: white;
     text-align: right;
   }
@@ -96,8 +96,8 @@
   
   .chat-input-section button {
     padding: 8px;
-    background-color: tomato;
-    color: white;
+    background-color: rgb(117, 255, 71);
+    color: rgb(1, 1, 1);
     border: none;
     cursor: pointer;
     border-radius: 5px;

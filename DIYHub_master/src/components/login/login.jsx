@@ -18,7 +18,7 @@ const Login = () => {
     // Hardcoded user roles
     if (username === 'ansh' && password === '1234') {
       alert('Welcome Ansh');
-      navigate('/dashboard');
+      navigate('/farmerdash');
     } else if (username === 'siya' && password === 'pokemon') {
       alert('Welcome Siya');
       navigate('/dashboard');

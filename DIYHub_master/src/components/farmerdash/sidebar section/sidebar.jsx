@@ -6,7 +6,7 @@ import { IoBedOutline } from "react-icons/io5";
 import { GiWindow } from "react-icons/gi";
 import { GiTable } from "react-icons/gi";
 import { FiPieChart } from "react-icons/fi";
-import { FaArrowTrendUp } from "react-icons/fa6";
+import { RiGalleryFill } from "react-icons/ri";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsCreditCard2Back } from "react-icons/bs";
 import { RxQuestionMarkCircled } from "react-icons/rx";
@@ -62,7 +62,7 @@ const Sidebar = () => {
 
           <li className="listItem">
             <Link to="/InspirationGallery" className='settingLink flex'>
-              <FaArrowTrendUp className='icon1' />
+              <RiGalleryFill  className='icon1' />
               <span className='smallText'>Gallery</span>
             </Link>
           </li>
@@ -75,7 +75,7 @@ const Sidebar = () => {
           </li>
 
           <li className="listItem">
-            <Link to="#" className='settingLink flex'>
+            <Link to="/marketplace" className='settingLink flex'>
               <BsCreditCard2Back className='icon1' />
               <span className='smallText'>Billing</span>
             </Link>

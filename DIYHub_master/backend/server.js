@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // Allow frontend connection
+    origin: 'http://localhost:5173', // Frontend URL
     methods: ['GET', 'POST'],
   },
 });
@@ -24,10 +24,9 @@ app.get('/api', (req, res) => {
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  // Listen for messages from clients and emit to all clients
   socket.on('sendMessage', (messageData) => {
-    console.log('Message received:', messageData);
-    io.emit('receiveMessage', messageData); // Emit the message to all clients
+    console.log('Message received from client:', messageData);
+    io.emit('receiveMessage', messageData); // Broadcast the message to all clients
   });
 
   socket.on('disconnect', () => {
